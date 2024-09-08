@@ -24,13 +24,13 @@ This project is the backend for the Intergalactic Trade Network, built using *Ne
 ### Steps
 
 1. Clone the repository:
-   bash
-   git clone <your-repo-url>
+   
+   git clone https://github.com/amitkojha05/myproject
    cd circlepe-backend
    
 
 2. Install dependencies:
-   bash
+   
    npm install
    
 
@@ -38,25 +38,26 @@ This project is the backend for the Intergalactic Trade Network, built using *Ne
 
    Create a .env file in the root directory:
    env
+   
    DATABASE_URL=mongodb://127.0.0.1/circlepe
    JWT_SECRET=your_secret_key
    PORT=3000
    
 
-4. Start MongoDB (if not using cloud):
-   bash
+5. Start MongoDB (if not using cloud):
+   
    mongod
    
 
-5. Start the backend in development mode:
-   bash
+6. Start the backend in development mode:
+   
    npm run start:dev
    
 
 ## Running Tests
 
 To run unit tests, execute:
-bash
+
 npm run test
 
 
