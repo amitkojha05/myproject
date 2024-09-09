@@ -12,10 +12,8 @@ async function bootstrap() {
     forbidNonWhitelisted: true, // Throw an error if extra properties are provided
     transform: true, // Automatically transform payloads to be objects typed according to their DTO classes
   }));
-  app.enableCors({
-    origin:'http://localhost:3000',
-  });
+ 
 
-  await app.listen(5000);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
