@@ -93,9 +93,15 @@ npm run test
 
 ## Deployment
 
-1. Deploy the project on any cloud provider like AWS, Render, etc.
-2. Ensure that MongoDB is either hosted locally or on a cloud provider like MongoDB Atlas.
-3. Update environment variables in the cloud deployment environment.
+This project can be deployed on platforms like *Render* or *Heroku*.
+
+1. *MongoDB*: Ensure you have a MongoDB Atlas connection string with the database whitelisted for IP access.
+2. *Environment Variables*: Set up your .env file with variables like MONGO_URI and PORT.
+3. *Render Deployment*:
+    - Add your environment variables in Render’s dashboard.
+    - Make sure your project is linked to your Git repository.
+    - Follow the deployment logs for any errors.
+
 
 ## Known Limitations
 
