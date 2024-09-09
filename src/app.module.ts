@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TradesModule } from './trades/trades.module';  // Import other modules as well
 import { AuthModule } from './auth/auth.module';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 @Module({
   imports: [

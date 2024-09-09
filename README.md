@@ -1,85 +1,111 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Intergalactic Trade Network - Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This project is the backend for the Intergalactic Trade Network, built using *NestJS* and *MongoDB*. The API supports managing trades, cargo, and inventory through RESTful endpoints and real-time WebSocket features.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- *User Authentication*: JWT-based authentication.
+- *Real-Time Updates*: WebSocket support for real-time notifications.
+- *RESTful APIs*: CRUD operations for trades, cargo, and inventory.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Design Decisions and Architecture
 
-## Project setup
+- *NestJS Framework*: Modular and scalable, allowing for easy integration and unit testing.
+- *MongoDB*: A NoSQL database used for flexible schema management.
+- *WebSocket*: Provides real-time updates for trades and inventory changes.
 
-```bash
-$ npm install
-```
+## Setup and Installation
 
-## Compile and run the project
+### Prerequisites
 
-```bash
-# development
-$ npm run start
+- *Node.js*: Ensure you have Node.js v14 or higher installed.
+- *MongoDB*: Install MongoDB and run it locally or use a cloud provider like MongoDB Atlas.
 
-# watch mode
-$ npm run start:dev
+### Steps
 
-# production mode
-$ npm run start:prod
-```
+1. Clone the repository:
+   
+   git clone https://github.com/amitkojha05/myproject
+   cd circlepe-backend
+   
 
-## Run tests
+2. Install dependencies:
+   
+   npm install
+   
 
-```bash
-# unit tests
-$ npm run test
+3. Set up environment variables:
 
-# e2e tests
-$ npm run test:e2e
+   Create a .env file in the root directory:
+   env
+   
+   DATABASE_URL=mongodb://127.0.0.1/circlepe
+   JWT_SECRET=your_secret_key
+   PORT=3000
+   
 
-# test coverage
-$ npm run test:cov
-```
+5. Start MongoDB (if not using cloud):
+   
+   mongod
+   
 
-## Resources
+6. Start the backend in development mode:
+   
+   npm run start:dev
+   
 
-Check out a few resources that may come in handy when working with NestJS:
+## Running Tests
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+To run unit tests, execute:
 
-## Support
+npm run test
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+## API Documentation
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Trades API
 
-## License
+- *GET /trades*: Get all trades.
+- *POST /trades*: Create a new trade.
+- *GET /trades/:id*: Get a specific trade by ID.
+- *PUT /trades/:id*: Update a trade by ID.
+- *DELETE /trades/:id*: Delete a trade by ID.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### Cargo API
+
+- *GET /cargo*: Get all cargo items.
+- *POST /cargo*: Create a new cargo item.
+- *GET /cargo/:id*: Get a specific cargo item by ID.
+- *PUT /cargo/:id*: Update a cargo item by ID.
+- *DELETE /cargo/:id*: Delete a cargo item by ID.
+
+### Inventory API
+
+- *GET /inventory*: Get all inventory items.
+- *POST /inventory*: Add an item to the inventory.
+- *GET /inventory/:id*: Get a specific inventory item by ID.
+- *PUT /inventory/:id*: Update an inventory item by ID.
+- *DELETE /inventory/:id*: Remove an inventory item by ID.
+
+### WebSocket
+
+- */ws-trades*: Subscribe to real-time updates on trades.
+
+## Deployment
+
+1. Deploy the project on any cloud provider like AWS, Render, etc.
+2. Ensure that MongoDB is either hosted locally or on a cloud provider like MongoDB Atlas.
+3. Update environment variables in the cloud deployment environment.
+
+## Known Limitations
+
+- No detailed error handling for some edge cases.
+- WebSocket connections are not yet fully authenticated.
+
+## Future Improvements
+
+- Implement more advanced features for cargo and trade management.
+- Enhance error handling and logging.
+
+---
+
