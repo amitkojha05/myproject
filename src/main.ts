@@ -13,7 +13,6 @@ async function bootstrap() {
     forbidNonWhitelisted: true, // Throw an error if extra properties are provided
     transform: true, // Automatically transform payloads to be objects typed according to their DTO classes
   }));
-  
 
   await app.listen(process.env.PORT);
 }
