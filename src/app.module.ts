@@ -5,7 +5,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/nest'), // Replace with your MongoDB connection string
+    MongooseModule.forRoot(process.env.MONGO_URI), // Replace with your MongoDB connection string
     TradesModule, AuthModule,  // Ensure the TradesModule is imported here
     // Import other modules as needed (CargoModule, InventoryModule, etc.)
   ],
